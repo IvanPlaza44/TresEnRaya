@@ -17,7 +17,7 @@ const WinnerModal = ({ winner, resetGame }) => {
                     {winner && <Square>{winner}</Square>}
                 </header>
                 <footer>
-                    <button onClick={resetGame}>Volver A Empezar</button>
+                    <button className="btn" onClick={resetGame}>Volver A Jugar</button>
                 </footer>
                 </div>
 

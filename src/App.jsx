@@ -64,35 +64,39 @@ function App() {
   }
 
   return (
-    <main className="board">
-      <button onClick={resetGame}>Reset Game</button>
-      <h1>Tres en Raya</h1>
-      
-      <section className="game">
-        {
-          board.map((square, index) => {
-            return (
-              <Square key={index} index={index} updateBoard={updateBoard}>
-                {square} 
-              </Square>
-            )
-          })
-        }
-      </section>
+    <div className="container">
+
+      <main className="board">
+        <h1>Tres en Raya</h1>
+        <button className="btn" onClick={resetGame}>Reset Game</button>
+        
+        <section className="game">
+          {
+            board.map((square, index) => {
+              return (
+                <Square key={index} index={index} updateBoard={updateBoard}>
+                  {square} 
+                </Square>
+              )
+            })
+          }
+        </section>
 
 
-      <section className="turn">
-        <Square isSelected={turn === TURNS.X}>
-          {TURNS.X}
-        </Square>
+        <section className="turn">
+          <Square isSelected={turn === TURNS.X}>
+            {TURNS.X}
+          </Square>
 
-        <Square isSelected={turn === TURNS.O}>
-          {TURNS.O}
-        </Square>
-      </section>
+          <Square isSelected={turn === TURNS.O}>
+            {TURNS.O}
+          </Square>
+        </section>
 
-      <WinnerModal winner={winner} resetGame={resetGame}/>
-    </main>
+        <WinnerModal winner={winner} resetGame={resetGame}/>
+      </main>
+
+    </div>
   )
 }
 
